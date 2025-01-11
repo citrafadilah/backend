@@ -3,7 +3,6 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-var cors = require("cors");
 var indexRouter = require("./app-server/routes/index");
 var usersRouter = require("./app-server/routes/users");
 var butikRouter = require("./app-server/routes/butiks");
@@ -13,13 +12,11 @@ var categoriesRouter = require("./app-server/routes/categories");
 const mongoose = require("mongoose");
 require("./app-server/model/db");
 var app = express();
-app.use(cors());
-app.use(express.json());
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
     "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With,Content-Type, Accept"
+    "Origin, X-Requested-With,Content-Type, Accept, Authorization"
   );
   res.setHeader(
     "Access-Control-Allow-Methods",
