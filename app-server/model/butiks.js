@@ -1,8 +1,5 @@
 const mongoose = require("mongoose");
 
-const Category = require("./categories"); 
-const User = require("./users"); 
-
 const butikSchema = new mongoose.Schema({
   nama: {
     type: String,
@@ -25,4 +22,4 @@ const butikSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("butik", butikSchema);
+module.exports = mongoose.model("Butik", butikSchema);
