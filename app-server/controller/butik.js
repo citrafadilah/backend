@@ -21,12 +21,9 @@ exports.getButiksByUser = (req, res) => {
 
 exports.createButik = (req, res) => {
   const butik = new Butik({
-    title: req.body.title,
-    description: req.body.description,
-    completed: req.body.completed,
-    dueDate: req.body.dueDate,
-    user: req.body.user,
-    category: req.body.category,
+    nama: req.body.nama,
+    harga: req.body.harga,
+    categories: req.body.categories,
   });
 
   console.log(butik);
@@ -46,15 +43,12 @@ exports.createButik = (req, res) => {
 };
 
 exports.createNewButik = (req, res) => {
-  const { title, description, dueDate, category, completed } = req.body;
+  const { nama, harga, categories } = req.body;
 
   const newButik = new Butik({
-    title,
-    description,
-    dueDate,
-    category,
-    completed: completed || false,
-    user: req.userId,
+    nama,
+    harga,
+    categories,
   });
 
   newButik

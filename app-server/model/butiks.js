@@ -22,4 +22,4 @@ const butikSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Butik", butikSchema);
+module.exports = mongoose.model("Butiks", butikSchema);
