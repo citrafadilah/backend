@@ -46,7 +46,7 @@ app.use((req, res, next) => {
 //   });
 
 // mongoose
-//   .connect("mongodb://localhost:27017/dbbutik")
+//   .connect("mongo://localhost:27017/dbbutik")
 //   .then(() => {
 //     console.log("Connected to Database");
 //   })

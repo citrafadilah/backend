@@ -51,8 +51,30 @@ const deleteKategori = (req, res) => {
         });
 }
 
+const updateKategori = (req, res) => {
+    const kategori = new Kategori({
+        _id: req.body.id,
+        nama: req.body.nama,
+        creator: req.userData.userid,
+    });
+
+    Kategori.updateOne({ _id: req.params.id }, kategori)
+        .then((result) => {
+            res.status(200).json({
+                message: 'Update data berhasil',
+                result: result,
+            });
+        })
+        .catch((err) => {
+            res.status(500).json({
+                message: 'internal server error !',
+            });
+        });
+}
+
 module.exports = {
     createKategori,
     readKategori,
     deleteKategori,
+    updateKategori,
 };
